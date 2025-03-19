@@ -25,5 +25,6 @@ else:
 
 
 
-Flashcards = [Flashcard(input("Enter a valid question"), input("Enter an answer"))]
-print(Flashcards)
+Flashcards = []
+Flashcards.append(Flashcard(input("Enter a valid question"), input("Enter an answer")))
+print(Flashcards.display())

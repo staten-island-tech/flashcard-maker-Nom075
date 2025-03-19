@@ -18,16 +18,29 @@ for count, course in enumerate(student_enrollment, start = 1):
 
 for count, course in enumerate(student_enrollment, start = 1):
     if courses[course]["seats"] == 0:
-        full = courses[course]
+        full = course
         for selection in courses:
-            if courses[selection]["category"] == "Technology" and courses[selection]["seats"] > 0:
+            if courses[selection]["category"] == courses[full]["category"] and courses[selection]["seats"] > 0:
                 print(f"{full} is full. Suggested course: {selection}")
+                final_enroll.append(selection)
                 break
     else:
         final_enroll.append(course)
         
     if count >= 3:
-        print("Applying 5% discount")
+        print("Applying 5% discount for enrolling in more than 3 courses")
+        Percent_discount = 0.05
 
     if courses[course]["category"] == "Technology":
-        print("$20 discount")
+        print("Applying $20 scholarship for enrolling in a Technology course")
+        num_discount = 20
+
+
+cost = 0
+for course in final_enroll:
+    cost += courses[course]["fee"]
+print(f"Total enrollment cost before discounts: {cost}$")
+cost = cost * (1-Percent_discount)
+cost = cost - num_discount
+
+print(f"Total enrollment cost after discounts: {cost}$")
