@@ -5,7 +5,7 @@ class Flashcard:
         self.question = question
         self.answer = answer
     def display(self):
-        return (f"{self.question}? The answer is {self.answer}")
+        return (f"{self.question} The answer is {self.answer}")
 
 
 
@@ -24,7 +24,24 @@ else:
     print("Could not detect answer. Program shutting down...") """
 
 
+flash = [
+    Flashcard("Is Aaron dumb?", "Nah"),
+    Flashcard("What is the sin of 30?", "1/2"),
+    Flashcard("Darwin is dumb?", "Yes, he is.")
 
-Flashcards = []
-Flashcards.append(Flashcard(input("Enter a valid question"), input("Enter an answer")))
-print(Flashcards.display())
+]
+
+flash_data = [cards.__dict__ for cards in flash]
+
+try:
+    with open("flash.json", "r") as file:
+        flash_data = json.load(file)
+except FileNotFoundError:
+    flash_data = []
+
+for card in flash:
+    print(card.display())
+
+with open("flash.json", "w") as file:
+    json.dump(flash_data, file, indent=4)
+

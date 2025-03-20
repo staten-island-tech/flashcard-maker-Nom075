@@ -44,3 +44,4 @@ cost = cost * (1-Percent_discount)
 cost = cost - num_discount
 
 print(f"Total enrollment cost after discounts: {cost}$")
+
