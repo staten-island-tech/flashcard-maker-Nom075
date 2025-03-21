@@ -9,19 +9,13 @@ class Flashcard:
 
 
 
-""" ans = input("Are you a teacher or Student? (Input T or S)")
+ans = input("Are you a teacher or Student? (Input T or S)")
 if ans.upper() == "T":
-    Pword = input("Enter valid teacher password")
-    if Pword == "AAA":
-        print("Valid passcode")
         Role = "T"
-    else:
-        print("Ur 100% a student.")
-        Role = "S"
 elif ans.upper() == "S":
     Role = "S"
 else:
-    print("Could not detect answer. Program shutting down...") """
+    print("Could not detect answer. Program shutting down...")
 
 
 flash = [
@@ -33,15 +27,28 @@ flash = [
 
 flash_data = [cards.__dict__ for cards in flash]
 
-try:
-    with open("flash.json", "r") as file:
-        flash_data = json.load(file)
-except FileNotFoundError:
-    flash_data = []
+def Card_Loader(flash_data):
+    try:
+        with open("flash.json", "r") as file:
+            flash_data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        flash_data = []
 
-for card in flash:
-    print(card.display())
+    if not flash_data:
+        flash_data = [cards.__dict__ for cards in flash]
 
-with open("flash.json", "w") as file:
-    json.dump(flash_data, file, indent=4)
 
+    with open("flash.json", "w") as file:
+        json.dump(flash_data, file, indent=4)
+
+    for card in flash:
+        print(card.display())
+
+    return flash_data
+
+flash_data = Card_Loader([])
+
+
+
+
+Card_Loader(flash_data)
