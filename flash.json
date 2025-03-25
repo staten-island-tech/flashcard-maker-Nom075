@@ -1,6 +1,95 @@
 [
     {
-        "question": "1",
-        "answer": "1"
+        "question": "How many hours are in 3 days?",
+        "answer": "72"
+    },
+    {
+        "question": "Who is the author of '1984'?",
+        "answer": "George Orwell"
+    },
+    {
+        "question": "If 15% of x is 45, what is 30% of 2x?",
+        "answer": "180"
+    },
+    {
+        "question": "Why is the sky blue?",
+        "answer": "Because of scattering of light"
+    },
+    {
+        "question": "What is the square root of 144?",
+        "answer": "12"
+    },
+
+    {
+        "question": "If 3x = 27, what is x?",
+        "answer": "9"
+    },
+    {
+        "question": "What is the capital of France?",
+        "answer": "Paris"
+    },
+    {
+        "question": "How many continents are there on Earth?",
+        "answer": "7"
+    },
+    {
+        "question": "If a car travels 60 miles per hour, how far will it travel in 3 hours?",
+        "answer": "180 miles"
+    },
+    {
+        "question": "What is the chemical symbol for water?",
+        "answer": "H2O"
+    },
+    {
+        "question": "How many planets are in our solar system?",
+        "answer": "8"
+    },
+    {
+        "question": "Enter the result of 7 * 8",
+        "answer": "56"
+    },
+    {
+        "question": "What is the currency of Japan?",
+        "answer": "Yen"
+    },
+    {
+        "question": "What is the largest mammal on Earth?",
+        "answer": "Blue whale"
+    },
+    {
+        "question": "If x = 5, what is 3x + 2?",
+        "answer": "17"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "answer": "Leonardo da Vinci"
+    },
+    {
+        "question": "How many $ does Darwin have?",
+        "answer": "0"
+    },
+    {
+        "question": "Who is the cooler Comp Sci teacher's name? (Write last name only)",
+        "answer": "Whalen"
+    },
+    {
+        "question": "If 10% of x is 90, what is 20% of 2x?",
+        "answer": "360"
+    },
+    {
+        "question": "Why is Darwen 900$ in debt?",
+        "answer": "He just is"
+    },
+    {
+        "question": "Once upon a time, a teacher's name was called Aaron. (log2(8))*(4*5)/e41) days passed. What is the teacher's name?",
+        "answer": "Aaron"
+    },
+    {
+        "question": "Enter a question",
+        "answer": "a question"
+    },
+    {
+        "question": "If 6x = 36, what is y?",
+        "answer": "6"
     }
 ]

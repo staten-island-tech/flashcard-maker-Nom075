@@ -7,7 +7,7 @@ class Flashcard:
         self.answer = answer
 
     def display(self):
-        return f"Question: {self.question} The answer is {self.answer}"
+        return f"Question: {self.question}? The answer is {self.answer}"
 
 # Ask for role
 ans = input("Are you a teacher or Student? (Input T or S): ")
@@ -25,6 +25,7 @@ try:
         flash_data = json.load(file)
 except (FileNotFoundError, json.JSONDecodeError):
     flash_data = []
+
 
 while True:
     if Role == "T":
@@ -55,8 +56,23 @@ while True:
         except (FileNotFoundError, json.JSONDecodeError):
             flash_data = []
         
-        
+        streak = 0
+        Points = 0
+        while True:
+            question = random.choice(flash_data)
+            if input(question["question"]).lower() == question["answer"].lower():
+                Points += (1+(streak/5))
+                print(f"Correct! You gained {(1+(streak/5))} points.")
+                print(f"Current points: {Points}")
+                streak += 1
+                print(f"Current streak: {streak}")
 
+            else: 
+                streak = 0
+                print(f"The correct answer was {question["answer"]}. Your streak has been reset to {streak}.")
+                print(f"Current points: {Points}.")
+            if input("Continue? Y/N").upper() != "Y":
+                break
 
 
         break
